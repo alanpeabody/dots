@@ -1,0 +1,95 @@
+if has('vim_starting')
+  set nocompatible
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#begin(expand('~/.vim/bundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+"""""""""""""""""""""""""""""""""""""""
+" Source Standard Bundles
+"
+if filereadable(expand("~/.vimrc.bundles"))
+  source ~/.vimrc.bundles
+endif
+
+"""""""""""""""""""""""""""""""""""""""
+" Source Local Bundles
+"
+if filereadable(expand("~/.vimrc.bundles.local"))
+  source ~/.vimrc.bundles.local
+endif
+
+call neobundle#end()
+
+filetype plugin indent on
+syntax on
+
+NeoBundleCheck
+
+"""""""""""""""""""""""""""""""""""""""
+" Shared Settings
+"
+
+" Show file name first in status bar
+set statusline=%t
+
+" Show git info in status lines
+set statusline+=%{fugitive#statusline()}
+
+" Searches are case insensitive unless you use a capital letter. /str/i forces case sensitivity
+set ignorecase
+set smartcase
+
+" Tab complete commands
+set wildmode=list:longest,full
+
+" Basic line numbering
+set number
+
+"Show 80 line mark
+set colorcolumn=80
+
+" Enable mouse
+set mouse=a
+
+"""""""""""""""""""""""""""""""""""""""
+" Shared Mappings
+"
+
+" Map jj to escape
+imap jj <Esc>
+
+" Change the leader to ,
+let mapleader=","
+let maplocalleader=","
+
+" Quickly reload your .vimrc
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+" Map ; to :
+nnoremap ; :
+
+" Map Y to behave like D, C
+map Y y$
+
+" Easy window nav
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" Easy tab nav
+map <C-n> :tabnext<CR>
+map <C-p> :tabprev<CR>
+
+" Move up and down by visual line, not line number
+nnoremap j gj
+nnoremap k gk
+
+"""""""""""""""""""""""""""""""""""""""
+" Source Local Customizations
+"
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
