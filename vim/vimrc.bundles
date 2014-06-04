@@ -19,7 +19,7 @@ NeoBundle 'tpope/vim-git'            " Git syntax (eg vim when in rebase, commit
 NeoBundle 'pangloss/vim-javascript'  " Better JavaScript syntax
 NeoBundle 'tpope/vim-cucumber'
 NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'nono/vim-handlebars'
+NeoBundle 'mustache/vim-mustache-handlebars'
 NeoBundle 'cakebaker/scss-syntax.vim'
 NeoBundle 'groenewege/vim-less'
 
