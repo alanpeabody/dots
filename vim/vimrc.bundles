@@ -10,18 +10,20 @@ NeoBundle 'scrooloose/nerdtree'      " Tree/directory nav
 NeoBundle 'kien/ctrlp.vim'           " Fuzzy find
 
 " Functionality
-NeoBundle 'ervandew/supertab'        " Insert mode tab completion
+" NeoBundle 'ervandew/supertab'        " Insert mode tab completion
 NeoBundle 'tpope/vim-commentary'     " Comment helpers
+NeoBundle 'Shougo/deoplete.nvim'     " Tab completion
 
 " Syntax/Language support
 NeoBundle 'scrooloose/syntastic'     " Syntax checker/validator
 NeoBundle 'tpope/vim-git'            " Git syntax (eg vim when in rebase, commit)
 NeoBundle 'pangloss/vim-javascript'  " Better JavaScript syntax
-NeoBundle 'tpope/vim-cucumber'
-NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'mustache/vim-mustache-handlebars'
 NeoBundle 'cakebaker/scss-syntax.vim'
 NeoBundle 'groenewege/vim-less'
+NeoBundle 'elixir-lang/vim-elixir'
+NeoBundle 'slashmili/alchemist.vim'
+NeoBundle 'powerman/vim-plugin-AnsiEsc' " Colored docs
 
 " Themes
 NeoBundle 'flazz/vim-colorschemes'   " All the colors schemes ever, really.

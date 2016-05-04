@@ -37,6 +37,9 @@ set statusline=%t
 " Show git info in status lines
 set statusline+=%{fugitive#statusline()}
 
+" Enable deoplete autocompleter
+let g:deoplete#enable_at_startup = 1
+
 " Searches are case insensitive unless you use a capital letter. /str/i forces case sensitivity
 set ignorecase
 set smartcase
