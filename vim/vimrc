@@ -1,31 +1,38 @@
-if has('vim_starting')
+if &compatible
   set nocompatible
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-
-call neobundle#begin(expand('~/.vim/bundle/'))
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-"""""""""""""""""""""""""""""""""""""""
-" Source Standard Bundles
-"
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
 endif
 
 """""""""""""""""""""""""""""""""""""""
-" Source Local Bundles
+" Package installation
 "
-if filereadable(expand("~/.vimrc.bundles.local"))
-  source ~/.vimrc.bundles.local
-endif
 
-call neobundle#end()
+set runtimepath+=/home/alan/.cache/dein/repos/github.com/Shougo/dein.vim
+
+if dein#load_state('/home/alan/.cache/dein')
+  call dein#begin('/home/alan/.cache/dein')
+
+  call dein#add('/home/alan/.cache/dein/repos/github.com/Shougo/dein.vim')
+
+  " Source Standard Plugins
+  if filereadable(expand("~/.vimrc.plugins"))
+    source ~/.vimrc.plugins
+  endif
+
+  " Source Local Plugins
+  if filereadable(expand("~/.vimrc.plugins.local"))
+    source ~/.vimrc.bundles.local
+  endif
+
+  call dein#end()
+  call dein#save_state()
+endif
 
 filetype plugin indent on
 syntax on
 
-NeoBundleCheck
+if dein#check_install()
+  call dein#install()
+endif
 
 """""""""""""""""""""""""""""""""""""""
 " Shared Settings
@@ -35,7 +42,7 @@ NeoBundleCheck
 set statusline=%t
 
 " Show git info in status lines
-set statusline+=%{fugitive#statusline()}
+" set statusline+=%{FugitiveStatusline()}
 
 " Enable deoplete autocompleter
 let g:deoplete#enable_at_startup = 1
@@ -50,12 +57,13 @@ set wildmode=list:longest,full
 " Basic line numbering
 set number
 
-"Show 80 line mark
-set colorcolumn=80
+"Show 100 line mark
+set colorcolumn=100
 
 " Enable mouse
 set mouse=a
 
+set wildignore+=*/tmp/*,*/node_modules/*,*/public/static/*,*/dist/*,*/_build/*,*/deps/*,*/uploads/*,*/images/*,*/log/*,*/docs/api/*,*/fonts/*,*/dist/*,*/cover/*
 """""""""""""""""""""""""""""""""""""""
 " Shared Mappings
 "

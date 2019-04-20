@@ -2,8 +2,8 @@
 
 
 echo
-echo 'Installing Agilion Dots'
-echo 'see https://github.com/agilionapps/dots for usage'
+echo 'Installing Dots'
+echo 'see https://github.com/alanpebody/dots for usage'
 echo
 
 pwd=`pwd`
@@ -62,13 +62,15 @@ if [ "$manage_vim" == "y" ]; then
     mv $HOME/.vim $HOME/.vim.back.$backuptime
   fi
 
-  # Set up NeoBundle
-  mkdir -p ~/.vim/bundle
-  git clone https://github.com/Shougo/neobundle.vim $HOME/.vim/bundle/neobundle.vim
+  # Set up dein
+  curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > dein.sh
+  sh ./dein.sh $HOME/.cache/dein
 
   for file in `ls $pwd/vim`; do
     SymlinkDotFile "$pwd/vim/$file" "$HOME/.$file"
   done
+
+  echo "Open vim and run :call dein#install() to finish install"
 fi
 
 read -p "Would you like to configure zsh? (y/n): " -n 1 manage_zsh
