@@ -1,0 +1,16 @@
+configuration {
+	width: 100;
+	lines: 5;
+	padding: 1300;
+	font: "Fira Code Regular 16";
+	line-padding: 15;
+	line-margin: 0;
+	fake-transparency: true;
+	color-normal: "argb:f000662C, #00FF6F, argb:000A261C, argb:f000FF6F, #0A261C";
+	color-window: "argb:f90A261C, argb:f90A261C, argb:f90A261C";
+	fixed-num-lines: true;
+  hide-scrollbar: true;
+	matching: "fuzzy";
+	separator-style: "none";
+  display-run: "run";
+}
