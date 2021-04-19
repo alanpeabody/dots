@@ -1,0 +1,25 @@
+" Functionality
+call dein#add('tpope/vim-sensible')       " Sensible defaults
+call dein#add('tpope/vim-sleuth')         " Auto set tab/spaces based on filetype
+call dein#add('tpope/vim-surround')
+call dein#add('tpope/vim-commentary')     " Comment helpers
+
+" Navigation
+call dein#add('tpope/vim-projectionist')  " Project navigation
+call dein#add('scrooloose/nerdtree')      " Tree/directory nav
+call dein#add('ctrlpvim/ctrlp.vim')       " Fuzzy find
+call dein#add('rking/ag.vim')
+
+" Syntax/Language support
+call dein#add('w0rp/ale')                 " Syntax linter/formatter etc
+call dein#add('tpope/vim-git')            " Git syntax (eg vim when in rebase, commit)
+call dein#add('pangloss/vim-javascript')  " Better JavaScript syntax
+call dein#add('leafgarland/typescript-vim') " Typescript
+call dein#add('jimenezrick/vimerl')
+call dein#add('elixir-lang/vim-elixir')
+call dein#add('powerman/vim-plugin-AnsiEsc') " Colored docs
+call dein#add('hashivim/vim-terraform')
+call dein#add('mxw/vim-jsx')
+
+" Themes
+call dein#add('flazz/vim-colorschemes')   " All the colors schemes ever, really.

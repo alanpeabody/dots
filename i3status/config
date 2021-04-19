@@ -1,0 +1,33 @@
+general {
+  output_format = "i3bar"
+  colors = true
+  interval = 5
+}
+
+order += "cpu_temperature 0"
+order += "cpu_usage"
+order += "load"
+order += "volume master"
+order += "tztime local"
+
+cpu_temperature 0 {
+  format = " Temp: %degrees °C "
+  path = "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input"
+}
+
+load {
+  format = " Load: %5min "
+}
+
+cpu_usage {
+  format = " CPU: %usage "
+}
+
+volume master {
+  format = " Vol: %volume "
+  device = "pulse:1"
+}
+
+tztime local {
+  format = " %b %-d - %-l:%M "
+}
